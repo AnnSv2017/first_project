@@ -1,6 +1,11 @@
-print('Hello, world!')
-print('changes have been made')
-var_1: int = 1
-var_3: tuple = (1, False, 'Hello')
-var_4: list = (1, 2)
-print(var_1, var_3, var_4)
+import requests
+
+api_url = 'http://api.open-notify.org/iss-now.json'
+
+response = requests.get(api_url)   # Отправляем GET-запрос и сохраняем ответ в переменной response
+
+if response.status_code == 200:    # Если код ответа на запрос - 200, то смотрим, что пришло в ответе
+    print(response.text)
+else:
+    print(response.status_code)    # При другом коде ответа выводим этот код
+
