@@ -10,9 +10,7 @@ dp: Dispatcher = Dispatcher()
 ATTEMPTS: int = 6
 
 users: dict = {}
-
-admin_ids: list[int] = [173901673, 5194778429]
-
+    
 
 def get_random_number() -> int:
     return random.randint(1, 100)
