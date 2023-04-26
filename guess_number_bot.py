@@ -1,7 +1,7 @@
 import random
 from aiogram import Bot, Dispatcher
 from aiogram.types import Message
-from aiogram.filters import Text, Command
+from aiogram.filters import Text, Command, CommandStart
 
 BOT_TOKEN: str = '6140558942:AAEOFhwchO2_P3K8aGCB386dBbX0CQ28lJw'
 bot: Bot = Bot(BOT_TOKEN)
@@ -11,10 +11,13 @@ ATTEMPTS: int = 6
 
 users: dict = {}
 
+admin_ids: list[int] = [173901673, 5194778429]
+
+
 def get_random_number() -> int:
     return random.randint(1, 100)
 
-@dp.message(Command(commands=['start']))
+@dp.message(CommandStart()) # CommandStart() == Command(commands=['start'])
 async def start_command(message: Message):
     await message.answer('Привет!\nДавай сыграем в игру "Угадай число"?\n\n'
                          'Чтобы получить правила игры и список доступных '
