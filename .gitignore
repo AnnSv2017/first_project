@@ -1,3 +1,5 @@
 /venv
 .env
 .idea
+modular_echo_bot/.env
+modular_echo_bot/.gitignore

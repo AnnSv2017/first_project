@@ -1,6 +1,6 @@
 from config import load_config
 
-config = load_config(".env")
+config = load_config(".env") # "./.env" Путь к основному окружению
 
 bot_token = config.tg_bot.token           # Сохраняем токен в переменную bot_token
 superadmin = config.tg_bot.admin_ids[0]   # Сохраняем ID админа в переменную superadmin
